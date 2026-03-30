@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="NachaWriter.Tests/NachaWriter.Tests.csproj" />
+  <Project Path="NachaWriter/NachaWriter.csproj" />
+</Solution>
