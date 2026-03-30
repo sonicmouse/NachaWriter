@@ -39,7 +39,6 @@ namespace NachaWriter.Infrastructure.Serialization
 			CancellationToken cancellationToken = default)
 		{
 			ObjectDisposedException.ThrowIf(_disposed, typeof(FieldStreamWriter));
-			ArgumentNullException.ThrowIfNull(value);
 
 			var stringValue = value.ToString();
 			if (stringValue.Length > length)
