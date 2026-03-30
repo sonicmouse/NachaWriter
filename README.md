@@ -65,7 +65,7 @@ var batch = new NachaBatch(batchHeader, entries);
 var nachaFile = new NachaFile(fileHeader, new[] { batch });
 
 await using var stream = File.Create("payroll.ach");
-await using var writer = new NachaFileStreamWriter(stream, leaveOpen: false);
+await using var writer = new NachaFileStreamWriter(stream, leaveOpen: true);
 await writer.WriteAsync(nachaFile);
 ```
 
