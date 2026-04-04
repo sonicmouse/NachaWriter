@@ -4,6 +4,6 @@ namespace NachaWriter.Domain.Models
 {
 	public interface IRecord
 	{
-		public abstract RecordType RecordTypeCode { get; }
+		public RecordType RecordTypeCode { get; }
 	}
 }
