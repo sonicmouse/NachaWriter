@@ -1,4 +1,5 @@
-﻿using NachaWriter.Domain.Aggregates;
+﻿using NachaWriter.Configuration;
+using NachaWriter.Domain.Aggregates;
 
 namespace NachaWriter.Infrastructure.Serialization
 {
@@ -60,7 +61,7 @@ namespace NachaWriter.Infrastructure.Serialization
 
 		private async Task PadFileToBlockingFactorAsync(CancellationToken cancellationToken)
 		{
-			while (_recordWriter.LineCount % 10 != 0)
+			while (_recordWriter.LineCount % NachaConstants.BlockingFactor != 0)
 			{
 				await _recordWriter.WriteFillerLineAsync(cancellationToken).ConfigureAwait(false);
 			}
